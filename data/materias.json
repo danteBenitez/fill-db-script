@@ -79,7 +79,6 @@
           "Formación ética y ciudadana",
           "Física",
           "Historia",
-          "Tecnología de gestión historia",
           "Lenguaje artístico y comunicacional",
           "Psicología",
           "Filosofía",
@@ -97,26 +96,185 @@
           "Proy. de investig. e intervención sociocomunitaria"
         ],
         "opcion2": [
-            "Lengua extranjera",
-            "Lengua y Literatura",
-            "Matemáticas",
-            "Educación Física",
-            "Formación ética y ciudadana",
-            "Química",
-            "Biología",
-            "Historia",
-            "Geografía",
-            "Lenguaje artístico y comunicacional",
-            "Psicología",
-            "Filosofía",
-            "Economía",
-            "Tecnología de gestión",
-            "Proy. De Investigación e Intervención Socio-Comunitaria",
-            "Cultura y Comunicación",
-            "Sociología",
-            "Ciencias políticas"
+          "Lengua extranjera",
+          "Lengua y Literatura",
+          "Matemáticas",
+          "Educación Física",
+          "Formación ética y ciudadana",
+          "Química",
+          "Biología",
+          "Historia",
+          "Geografía",
+          "Lenguaje artístico y comunicacional",
+          "Psicología",
+          "Filosofía",
+          "Economía",
+          "Tecnología de gestión",
+          "Proy. De Investigación e Intervención Socio-Comunitaria",
+          "Cultura y Comunicación",
+          "Sociología",
+          "Ciencias políticas"
+        ]
+      },
+      "mod_produccion": {
+        "opcion1": [
+          "Lengua y Literatura",
+          "Lengua extranjera",
+          "Educación Física",
+          "Matemáticas",
+          "Historia",
+          "Biología",
+          "Geografía",
+          "Química",
+          "Procesos agropecuarios",
+          "Economía",
+          "Producción de Servicios",
+          "Tecnología de Control",
+          "Tecnología de Gestión",
+          "Tecnología de los Materiales",
+          "Comunicación",
+          "Filosofía",
+          "Formación ética y ciudadana",
+          "Tecnología de la Información y la Comunicación",
+          "Marco Jurídico de los Procesos Productivos",
+          "Proyecto Tecnológico",
+          "Instrumentos y Control",
+          "Procesos productivos"
+        ],
+        "opcion2": [
+          "Lengua y Literatura",
+          "Lengua extranjera",
+          "Educación Física",
+          "Matemáticas",
+          "Física",
+          "Química",
+          "Filosofía",
+          "Lenguaje artístico y comunicacional",
+          "Geografía",
+          "Procesos productivos",
+          "Economía",
+          "Historia",
+          "Producción de servicios",
+          "Procesos agropecuarios",
+          "Tecnología de gestión",
+          "Marco Jurídico de los Procesos Productivos",
+          "Tecnología de la Información y de las Comunicaciones",
+          "Tecnología de Control",
+          "Proyecto Tecnológico"
         ]
       }
+    }
+  },
+  "terciario": {
+    "tecnicatura_superior_mecatronica": {
+      "primer_cuatrimestre": [
+        "Inglés Técnico",
+        "Seguridad e Higiene Industrial I",
+        "Metro Física I",
+        "Elementos de Máquinas",
+        "Taller de Dibujo Técnico y Diseño asistido I",
+        "Taller de Matemática"
+      ],
+      "segundo_cuatrimestre": [
+        "Metro Física II",
+        "Sistemas Hidráulicos y Neumáticos",
+        "Sistemas Eléctricos y Electrónicos",
+        "Introducción a la Mecatrónica",
+        "Taller de Electricidad y Electrónica"
+      ],
+      "tercer_cuatrimestre": [
+        "Diseño Industrial y CAD",
+        "Sistemas Mecánicos",
+        "Proceso y Gestión de Mantenimiento y Calidad",
+        "Integración de Sistemas I",
+        "Taller de Dibujo Técnico"
+      ],
+      "cuarto_cuatrimestre": [
+        "Configuración de Sistemas Mecatrónicos",
+        "Integración de Sistemas II",
+        "Robótica",
+        "Diseño Industrial y Simulación de Sistemas Mecatrónicos",
+        "Taller de Programación / Electrónica / Simulación / Robótica"
+      ],
+      "quinto_cuatrimestre": [
+        "Formación y Orientación Laboral",
+        "Seguridad e Higiene Industrial II",
+        "Módulo de Vinculación y Actualización Científico-Tecnológica",
+        "Proyecto Integrador o Final - Nivel I",
+        "Taller de Redacción Científica"
+      ],
+      "sexto_cuatrimestre": [
+        "Proyecto Integrador o Final - Nivel 2",
+        "Módulo de Contextualización, Aplicaciones, Regionales",
+        "Taller de habilidades comunicacionales",
+        "Seminarios de Vinculación con el Contexto Socio-Productivo, Local y Regional"
+      ]
+    },
+    "tecnicatura_superior_software": {
+        "primer_cuatrimestre": [
+            "Arquitectura y Sistemas operativos",
+            "Algoritmos y Estructuras de Datos",
+            "Taller de Lenguajes de Programación I",
+            "Base de Datos I",
+            "Proyecto de Integración",
+            "Laboratorio de Inglés I",
+            "Matemática Aplicada I"
+        ],
+        "segundo_cuatrimestre": [
+            "Taller de Programación II",
+            "Ingeniería de Software I",
+            "Base de Datos II",
+            "Proyecto de Integración II",
+            "Seminarios y Talleres de Actualización",
+            "Laboratorios de Inglés II",
+            "Matemática Aplicada II"
+        ],
+        "tercer_cuatrimestre": [
+            "Estadística",
+            "Taller de Lenguajes de Programación III",
+            "Ingeniería de Software II",
+            "Seminarios y Talleres de Actualización II",
+            "Proyecto Integrador Final / Práctica Profesional"
+        ],
+        "cuarto_cuatrimestre": [
+            "Taller de Lenguajes de Programación IV",
+            "Redes y Seguridad Informática",
+            "Seminarios y Talleres de Actualización III",
+            "Práctica Profesional III",
+            "Análisis de la Realidad Social de Formosa"
+        ]
+    },
+    "tecnicatura_superior_quimica": {
+        "primer_año": [
+          "Análisis de Datos",
+          "Formulación y preparación de mezclas",
+          "Operaciones básicas en la industria química",
+          "Generación y recuperación de energía",
+          "Práctica Profesionalizante I",
+          "Inglés Técnico I",
+          "Acondicionamiento y almacenamiento de productos químicos",
+          "Regulación y control de procesos químicos I",
+          "Mantenimiento electromecánico",
+          "Prevención de riesgos en industrias químicas"
+        ],
+        "segundo_año": [
+            "Inglés técnico II",
+            "Formación y orientación laboral",
+            "Regulación y control de procesos químicos II",
+            "Práctico Profesionalizante II",
+            "Transporte de sólidos y fluidos",
+            "Reactores químicos",
+            "Organización y gestión de industrias químicas",
+            "Comunicación",
+            "Formulación y evaluación de proyectos",
+            "Proyecto de industrias de procesos químicos",
+            "Ciencia, Sociedad y Estado"
+        ],
+        "tercer_año": [
+            "Comunicación II",
+            "Análisis de la realidad social de Formosa",
+            "Práctica Profesionalizante II"
+        ]
     }
   }
 }
