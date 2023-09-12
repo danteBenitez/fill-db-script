@@ -1,0 +1,988 @@
+[{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb83b"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "MATACOS",
+  "cod_depar": 34028,
+  "localidad": "CAMPO BANDERA",
+  "cod_loca": 34028007,
+  "CUEanexo": 340000100,
+  "nombre": "EPEP Nº 352",
+  "domicilio": "RUTA PROVINCIAL Nº39   CAMPO BANDERA",
+  "cod_postal": "P3636",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb83c"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "MATACOS",
+  "cod_depar": 34028,
+  "localidad": "EL TREBOL",
+  "cod_loca": 34028081,
+  "CUEanexo": 340000101,
+  "nombre": "EPEP Nº 352 ANEXO 1",
+  "domicilio": "RUTA PROVINCIAL Nº39   EL TREBOL",
+  "cod_postal": "P3636",
+  "telefono": "0370 783493",
+  "mail": "Mendoza c Saavedra",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb83d"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "MATACOS",
+  "cod_depar": 34028,
+  "localidad": "TRES PALMITAS",
+  "cod_loca": 34028082,
+  "CUEanexo": 340000102,
+  "nombre": "EPEP Nº 352 ANEXO 2",
+  "domicilio": "   TRES PALMITAS",
+  "cod_postal": "P3636",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb83e"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "MATACOS",
+  "cod_depar": 34028,
+  "localidad": "CAMPO GRANDE",
+  "cod_loca": 34028008,
+  "CUEanexo": 340000200,
+  "nombre": "EPEP Nº 220",
+  "domicilio": "   CAMPO GRANDE",
+  "cod_postal": "P3636",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb83f"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "MATACOS",
+  "cod_depar": 34028,
+  "localidad": "CAMPO LA CRUZ",
+  "cod_loca": 34028010,
+  "CUEanexo": 340000201,
+  "nombre": "EPEP Nº 220 ANEXO 1 (EX EPEP Nº 23 ANEXO 1)",
+  "domicilio": "   PARAJE EL PARAISO",
+  "cod_postal": "P3636",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb840"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "EL COLORADO",
+  "cod_loca": 34056091,
+  "CUEanexo": 340000300,
+  "nombre": "EPET Nº 4",
+  "domicilio": "JUAN BAUTISTA ALBERDI  LA PEÑA ",
+  "cod_postal": "P3603",
+  "telefono": "0370 4480367",
+  "mail": "epet4@live.com.ar",
+  "mod_comun": 1,
+  "ec_sec": 1,
+  "ec_sec_INET": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb841"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "EL COLORADO",
+  "cod_loca": 34056091,
+  "CUEanexo": 340000400,
+  "nombre": "EPEE Nº 3",
+  "domicilio": "CRISOLOGO LARRALDE 1221 ITATI AV. CRISOLOGO LARRALDE",
+  "cod_postal": "P3603",
+  "telefono": "03704 480092",
+  "mail": "esteladominguez1974@gmail.com",
+  "mod_especial": 1,
+  "esp_tem": 1,
+  "esp_pri": 1,
+  "esp_int": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb842"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "BAÑADERO",
+  "cod_loca": 34056020,
+  "CUEanexo": 340000500,
+  "nombre": "EPEP Nº 202",
+  "domicilio": "   EL BAÑADERO- RUTA PROVINCIAL N° 9",
+  "cod_postal": "P3603",
+  "telefono": "(3704) 554606",
+  "mail": "juancuenca_43@hotmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb843"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PATIÑO",
+  "cod_depar": 34035,
+  "localidad": "SAN SIMON",
+  "cod_loca": 34035552,
+  "CUEanexo": 340000600,
+  "nombre": "EPEP Nº 229",
+  "domicilio": "   SAN SIMON -RUTA N° 9",
+  "cod_postal": "P3603",
+  "telefono": "0 0",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb844"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "COLONIA RODA",
+  "cod_loca": 34056068,
+  "CUEanexo": 340000700,
+  "nombre": "EPEP Nº 286",
+  "domicilio": "   COLONIA RODA",
+  "cod_postal": "P3603",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb845"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "COLONIA EL PALMAR",
+  "cod_loca": 34056052,
+  "CUEanexo": 340000800,
+  "nombre": "EPEP Nº 415",
+  "domicilio": "   EL PALMAR ",
+  "cod_postal": "P3603",
+  "telefono": "0 0",
+  "mail": "ricardogm575@gmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb846"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "LA FLORESTA",
+  "cod_loca": 34056175,
+  "CUEanexo": 340001200,
+  "nombre": "EPEP Nº 303",
+  "domicilio": "RUTA Nº9   LA FLORESTA",
+  "cod_postal": 3603,
+  "telefono": "03704 272082",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb847"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "LA FLORESTA",
+  "cod_loca": 34056175,
+  "CUEanexo": 340001202,
+  "nombre": "EPEP Nº 303 ANEXO 2 (EX EPEP Nº 370)",
+  "domicilio": "   ",
+  "cod_postal": "P3603",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb848"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "LOTE 17-LEGUA A",
+  "cod_loca": 34056191,
+  "CUEanexo": 340001300,
+  "nombre": "EPEP Nº 371 DOCENTES RURALES",
+  "domicilio": "   LOTE 17-LEGUA A- CAMPO HARDY",
+  "cod_postal": "P3602",
+  "telefono": "3704 203292",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb849"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PIRANE",
+  "cod_depar": 34056,
+  "localidad": "KILOMETRO 224",
+  "cod_loca": 34056167,
+  "CUEanexo": 340001400,
+  "nombre": "EPEP Nº 27 GRAL. RICHIERI",
+  "domicilio": "   KILOMETRO 224 N.R.B.",
+  "cod_postal": "P3603",
+  "telefono": "0 0",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84a"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340001500,
+  "nombre": "EPES Nº 42 ETELVINA CONCEPCIÓN BARRETO",
+  "domicilio": "MANZANA 52  JUAN DOMINDO PERON ",
+  "cod_postal": "P3600",
+  "telefono": "370 4000391",
+  "mail": "silva_gimenez@ciudad.com.ar",
+  "mod_comun": 1,
+  "ec_sec": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84b"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "MARIANO BOEDO",
+  "cod_loca": 34014158,
+  "CUEanexo": 340001900,
+  "nombre": "EPEP Nº 55 DR. MARIANO BOEDO",
+  "domicilio": "   A UNA CUADRA ESTACION GRAL. BELGRANO",
+  "cod_postal": "P3604",
+  "telefono": "0 434243",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84c"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PATIÑO",
+  "cod_depar": 34035,
+  "localidad": "BARTOLOME DE LAS CASAS",
+  "cod_loca": 34035617,
+  "CUEanexo": 340002000,
+  "nombre": "EPEP Nº 73 FRAY BME. DE LAS CASAS (EX EPEP Nº 483 ANEXO)",
+  "domicilio": "   BARTOLOME DE LAS CASAS",
+  "cod_postal": "P3622",
+  "telefono": "0 0",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84d"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PATIÑO",
+  "cod_depar": 34035,
+  "localidad": "COLONIA NAPENAY",
+  "cod_loca": 34035080,
+  "CUEanexo": 340002100,
+  "nombre": "EPEP Nº 307 TIERRA DEL FUEGO",
+  "domicilio": "RUTA NACIONAL Nº95   COLONIA NAPENAY",
+  "cod_postal": "P3620",
+  "telefono": "3716 03716546",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84e"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PATIÑO",
+  "cod_depar": 34035,
+  "localidad": "COLONIA BARTOLOME DE LAS CASAS",
+  "cod_loca": 34035619,
+  "CUEanexo": 340002200,
+  "nombre": "NEP Y FP Nº 28 - EX EDIFICIO EPEP Nº 199",
+  "domicilio": "   COLONIA ABORIGEN B.DE LAS CASAS",
+  "cod_postal": "P3622",
+  "telefono": "03704 507863",
+  "mail": "mamibotini65 @hotmail.com (personal de la directora)",
+  "mod_adultos": 1,
+  "ad_sec": 1,
+  "ad_FP_INET": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb84f"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "LOMA HERMOSA",
+  "cod_loca": 34049078,
+  "CUEanexo": 340002400,
+  "nombre": "EPEP Nº 208 REPÚBLICA DEL LIBANO",
+  "domicilio": "RUTA COMPLEMENTARIA Nº6   LOMA HERMOSA",
+  "cod_postal": "P3611",
+  "telefono": "03718 15537981",
+  "mail": "escuelita208@gmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb850"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "RIACHO HE-HE",
+  "cod_loca": 34049105,
+  "CUEanexo": 340002500,
+  "nombre": "EJI Nº 12 NIDITO DE AMOR",
+  "domicilio": "RUTA PROVINCIAL Nº 2  CENTRO ",
+  "cod_postal": "P3611",
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb851"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "RIACHO HE-HE",
+  "cod_loca": 34049105,
+  "CUEanexo": 340002501,
+  "nombre": "EJI Nº 12 - JIM Nº 2 DR. HECTOR R. BALMACEDA",
+  "domicilio": "SIXTO AYALA  CENTRO RIACHO HE HE",
+  "cod_postal": "P3611",
+  "telefono": "3718 546147",
+  "mail": "EJI12RIACHOHEHE@YAHOO.COM.AR",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb852"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "RIACHO HE-HE",
+  "cod_loca": 34049105,
+  "CUEanexo": 340002502,
+  "nombre": "EJI Nº 12 - EPEP Nº 39",
+  "domicilio": "CAMINO VECINAL  LA PAZ RIACHO HE-HE",
+  "cod_postal": "P3600",
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb853"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "LA FRONTERA",
+  "cod_loca": 34049074,
+  "CUEanexo": 340002503,
+  "nombre": "EJI Nº 12 - EPEP Nº 70",
+  "domicilio": "RUTA PROVINCIAL Nº 6   LA FRONTERA",
+  "cod_postal": 3613,
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb854"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "LOMA HERMOSA",
+  "cod_loca": 34049078,
+  "CUEanexo": 340002504,
+  "nombre": "EJI Nº 12 - EPEP Nº 208 CANTITO DE AMOR",
+  "domicilio": "RUTA COMPLEMENTARIA Nº 6   LOMA HERMOSA",
+  "cod_postal": 3611,
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb855"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "EL RECODO",
+  "cod_loca": 34049036,
+  "CUEanexo": 340002505,
+  "nombre": "EJI Nº 12 - EPEP Nº 317",
+  "domicilio": "CAMINO VECINAL   EL RECODO",
+  "cod_postal": 3600,
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb856"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "ESPERANZA",
+  "cod_loca": 34049038,
+  "CUEanexo": 340002506,
+  "nombre": "EJI Nº 12 - EPEP Nº 364 MI MUNDO FELIZ",
+  "domicilio": "CAMINO VECINAL  LA ESPERANZA RIACHO HE-HE",
+  "cod_postal": 3611,
+  "telefono": "0 0",
+  "mail": "EJI12RIACHOHEHE@YAHOO.COM.AR",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb857"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "MARTIN FIERRO",
+  "cod_loca": 34049084,
+  "CUEanexo": 340002507,
+  "nombre": "EJI Nº 12 - EPEP Nº 264",
+  "domicilio": "RUTA PROVINCIAL Nº 2   ",
+  "cod_postal": "P3611",
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb858"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "RIACHO HE-HE",
+  "cod_loca": 34049105,
+  "CUEanexo": 340002508,
+  "nombre": "EJI Nº 12 - EPEP Nº 85",
+  "domicilio": "  OBRERO RIACHO HE-HE",
+  "cod_postal": "P3611",
+  "telefono": "0 0",
+  "mail": "EJI12RIACHOHEHE@YAHOO.COM.AR",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb859"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "EL RECODO",
+  "cod_loca": 34049036,
+  "CUEanexo": 340002509,
+  "nombre": "EJI Nº 12 - EPEP Nº 119 OSITOS CARIÑOSOS",
+  "domicilio": "   EL RECODO",
+  "cod_postal": "P3611",
+  "telefono": "0 0",
+  "mail": "eji12riachohehe@yahoo,com.ar",
+  "mod_comun": 1,
+  "ec_jar": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85a"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "LAGUNA BLANCA",
+  "cod_loca": 34049075,
+  "CUEanexo": 340002600,
+  "nombre": "ISFDCyT PTE JUAN DOMINGO PERÓN",
+  "domicilio": "AV. SORRENTO CARLOS CRITELLI S/N  ",
+  "cod_postal": "P3613",
+  "telefono": "03718 401714",
+  "mail": "ISFD FORMOSA.RFFDC.EDU.AR",
+  "mod_comun": 1,
+  "ec_SNU": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85b"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "LAGUNA BLANCA",
+  "cod_loca": 34049075,
+  "CUEanexo": 340002700,
+  "nombre": "EPES Nº 22 MALVINAS ARGENTINAS",
+  "domicilio": "AV. NESTOR KICHNER   ",
+  "cod_postal": "P3613",
+  "telefono": "03718 401364",
+  "mail": "epes22_malvinasargentinas@yahoo.com.ar",
+  "mod_comun": 1,
+  "ec_sec": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85c"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "PILCOMAYO",
+  "cod_depar": 34049,
+  "localidad": "RIACHO HE-HE",
+  "cod_loca": 34049105,
+  "CUEanexo": 340002800,
+  "nombre": "EPEP Nº 49 SAN JOSE DE CALASANZ",
+  "domicilio": "CARLOS SAMANIOGO S/N   PASCUAL MAGLIETI Y AV. SAN MARTIN S/N",
+  "cod_postal": "P3611",
+  "telefono": "03704 412867",
+  "mail": "escuela49riacho@hotmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85d"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340002900,
+  "nombre": "EPEP Nº 224 FORTIN YUNKA",
+  "domicilio": "FOTHERINGHAN 1860 OBRERO ",
+  "cod_postal": "P3600",
+  "telefono": "3704 376549",
+  "mail": "epepn224@outlook.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85e"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340003000,
+  "nombre": "EPE DOMICILIARIA Y HOSPITALARIA Nº 1 DON J.B. CACERES",
+  "domicilio": "AYACUCHO Y JULIO A ROCA  DON BOSCO ",
+  "cod_postal": "P3600",
+  "telefono": "370 4685796",
+  "mail": "ESCUELAHOSPITALARIAFORMOSA@HOTMAIL.COM",
+  "hos_pri": 1,
+  "hos_sec": 1,
+  "tall_art": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb85f"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340003100,
+  "nombre": "NEP Y FP Nº 05 GREGORIA MATORRAS",
+  "domicilio": "FOTHERINGHAM 1880 OBRERO ",
+  "cod_postal": "P3600",
+  "telefono": "3704 262254",
+  "mail": "delvallenep5@gmail.com",
+  "mod_adultos": 1,
+  "ad_sec": 1,
+  "ad_FP_INET": 1,
+  "ser_com": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb860"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340003102,
+  "nombre": "NEP Y FP Nº 05 - EPEP Nº 407 CARLOS F. CORDOBA",
+  "domicilio": "JUAN LUIS DIAZ 1400 SAN JUAN BAUTISTA EPEP Nº 407",
+  "cod_postal": "P3600",
+  "telefono": "3704 622254",
+  "mail": "delvallenep5@gmail.com",
+  "mod_adultos": 1,
+  "ad_sec": 1,
+  "ad_FP_INET": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb861"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340003108,
+  "nombre": "NEP Y FP Nº 05 - CAPILLA VIRGEN DEL PILAR",
+  "domicilio": "BRANDZEN 2000 LA PILAR CAPILLA",
+  "cod_postal": "P3600",
+  "telefono": "3704 262254",
+  "mail": "delvallenep5@gmail.com",
+  "mod_adultos": 1,
+  "ad_FP_INET": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb862"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Urbano",
+  "departamento": "FORMOSA",
+  "cod_depar": 34014,
+  "localidad": "FORMOSA",
+  "cod_loca": 34014051,
+  "CUEanexo": 340003109,
+  "nombre": "NEP Y FP Nº 05 - SALÓN MULTIUSO INMACULADA CONCEPCION",
+  "domicilio": "JUJUY 1657 VILLA HERMOSA MORATALLA Y JUJUY",
+  "cod_postal": "P3600",
+  "telefono": "3704 262254",
+  "mail": "delvallenep5@gmail.com",
+  "mod_adultos": 1,
+  "ad_sec": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb863"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "TRES LAGUNAS",
+  "cod_loca": 34042087,
+  "CUEanexo": 340003300,
+  "nombre": "EPES Nº 21 GRAL JULIO A ROCA",
+  "domicilio": "MANUEL DÍAZ   CENTRO TRES LAGUNAS",
+  "cod_postal": "P3611",
+  "telefono": "3718 407084",
+  "mail": "epes_21@hotmail.com",
+  "mod_comun": 1,
+  "ec_sec": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb864"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "LAGUNA GALLO",
+  "cod_loca": 34042047,
+  "CUEanexo": 340003500,
+  "nombre": "EPEP Nº 108 MARCOS AREVALOS",
+  "domicilio": "   LAGUNA GALLO",
+  "cod_postal": "P3611",
+  "telefono": "3718 686342",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb865"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "EL POMBERO",
+  "cod_loca": 34042024,
+  "CUEanexo": 340003502,
+  "nombre": "EPEP Nº 108 ANEXO 2 (EX EPEP Nº 185)",
+  "domicilio": "   EL POMBERO",
+  "cod_postal": "P3611",
+  "telefono": "37018 686342",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb866"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "LOMA ZAPATU",
+  "cod_loca": 34042051,
+  "CUEanexo": 340003800,
+  "nombre": "EPEP Nº 269 CONCEPCION RIVEROS DE PALACIO",
+  "domicilio": "   LOMA ZAPATU",
+  "cod_postal": "P3611",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb867"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "VILLA HERMOSA",
+  "cod_loca": 34042089,
+  "CUEanexo": 340003900,
+  "nombre": "EPEP Nº 38",
+  "domicilio": "RUTA PROVINCIAL Nº6   COLONIA VILLA HERMOSA",
+  "cod_postal": "P3611",
+  "telefono": "3718 576445",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb868"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "VILLA HERMOSA",
+  "cod_loca": 34042089,
+  "CUEanexo": 340004000,
+  "nombre": "EPEP Nº 40 PRESIDENTE ARAMBURU",
+  "domicilio": "   VILLA HERMOSA",
+  "cod_postal": "P3611",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb869"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "TRES LAGUNAS",
+  "cod_loca": 34042087,
+  "CUEanexo": 340004100,
+  "nombre": "EPEP Nº 74 DR. RICARDO ROJAS",
+  "domicilio": "OSCAR DELMIRO MARIN  CENTRO MARIN, OSCAR DELMIRO S/Nº TRES LAGUNAS",
+  "cod_postal": "P3611",
+  "telefono": "3717 699771",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb86a"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "LAGUNA TORO",
+  "cod_loca": 34042098,
+  "CUEanexo": 340004200,
+  "nombre": "EPEP Nº 214 MARTIN MIGUEL DE GÜEMES",
+  "domicilio": "RUTA PROVINCIAL Nº3   RUTA 3 (TRES) - LAGUNA TORO",
+  "cod_postal": "P3611",
+  "telefono": "03718 15411800",
+  "mail": "Escuelaprimaria214@hotmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb86b"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "BUENA VISTA",
+  "cod_loca": 34042008,
+  "CUEanexo": 340004300,
+  "nombre": "EPEP DE FRONTERA Nº 10 CLOTILDE G. MOLINA",
+  "domicilio": "RUTA PROVINCIAL Nº4   RUTA PROV.N° 4 Y BS.AS- BUENA VISTA",
+  "cod_postal": "P3615",
+  "telefono": "037 45454",
+  "mail": "clotildegmolina@gmail.com",
+  "mod_comun": 1,
+  "ec_pri": 1
+},
+{
+  "_id": {
+    "$oid": "64efdd3d221f7102274eb86c"
+  },
+  "jurisdicción": "Formosa",
+  "sector": "Estatal",
+  "ambito": "Rural",
+  "departamento": "PILAGAS",
+  "cod_depar": 34042,
+  "localidad": "BUENA VISTA",
+  "cod_loca": 34042008,
+  "CUEanexo": 340004400,
+  "nombre": "EPEP Nº 339",
+  "domicilio": "RUTA NAC. Nº86 DOC.ARG.   BUENA VISTA",
+  "cod_postal": "P3615",
+  "telefono": "00 00",
+  "mod_comun": 1,
+  "ec_pri": 1
+}]

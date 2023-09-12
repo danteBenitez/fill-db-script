@@ -1,0 +1,122 @@
+{
+  "primaria": [
+    "Matemáticas",
+    "Lengua y Literatura",
+    "Ciencias Naturales",
+    "Ciencias Sociales",
+    "Educación Física",
+    "Formación Ética y Ciudadana",
+    "Danza",
+    "Música",
+    "Manualidades",
+    "Educación tecnológica"
+  ],
+  "secundaria": {
+    "ciclo_basico": [
+      "Historia",
+      "Geografía",
+      "Formación Ética",
+      "Educación Física",
+      "Biología",
+      "Ciencias Físico-Químicas",
+      "Educación tecnológica",
+      "Matemáticas",
+      "Lengua y literatura",
+      "Artes Visuales",
+      "Música",
+      "Danza",
+      "Teatro",
+      "Lenguas extranjeras",
+      "Lengua y Cultura originarias"
+    ],
+    "ciclo_orientado": {
+      "mod_cs_naturales": {
+        "opcion1": [
+          "Lengua y Literatura",
+          "Lengua extranjera",
+          "Matemáticas",
+          "Educación Física",
+          "Física",
+          "Química",
+          "Biología",
+          "Historia",
+          "Lenguaje artístico y comunicacional",
+          "Formación ética y ciudadana",
+          "Tecnología de gestión",
+          "Matemática aplicada",
+          "Salud",
+          "Tecnología de la Información y la Comunicación",
+          "Ambiente y Sociedad",
+          "Proy. De Investigación e Intervención Socio-Comunitaria",
+          "Psicología"
+        ],
+        "opcion2": [
+          "Lengua y Literatura",
+          "Lengua extranjera",
+          "Matemáticas",
+          "Educación Física",
+          "Física",
+          "Química",
+          "Biología",
+          "Historia",
+          "Lenguaje artístico y comunicacional",
+          "Formación ética y ciudadana",
+          "Tecnología de gestión",
+          "Física y Astronomía",
+          "Salud",
+          "Tecnología de la Información y la Comunicación",
+          "Ambiente y Sociedad",
+          "Proy. De Investigación e Intervención Socio-Comunitaria",
+          "Psicología"
+        ]
+      },
+      "mod_cs_sociales": {
+        "opcion1": [
+          "Lengua y literatura",
+          "Lengua extranjera",
+          "Matemática",
+          "Educación física",
+          "Formación ética y ciudadana",
+          "Física",
+          "Historia",
+          "Tecnología de gestión historia",
+          "Lenguaje artístico y comunicacional",
+          "Psicología",
+          "Filosofía",
+          "Sociología",
+          "Filosofía",
+          "Biología",
+          "Economía",
+          "Geografía",
+          "Tecnología de gestión",
+          "Economía",
+          "Ciencias políticas",
+          "Sociología",
+          "Cultura y comunicación",
+          "Ciencias Políticas",
+          "Proy. de investig. e intervención sociocomunitaria"
+        ],
+        "opcion2": [
+            "Lengua extranjera",
+            "Lengua y Literatura",
+            "Matemáticas",
+            "Educación Física",
+            "Formación ética y ciudadana",
+            "Química",
+            "Biología",
+            "Historia",
+            "Geografía",
+            "Lenguaje artístico y comunicacional",
+            "Psicología",
+            "Filosofía",
+            "Economía",
+            "Tecnología de gestión",
+            "Proy. De Investigación e Intervención Socio-Comunitaria",
+            "Cultura y Comunicación",
+            "Sociología",
+            "Ciencias políticas"
+        ]
+      }
+    }
+  }
+}
