@@ -1,9 +1,8 @@
-import { fakerES_MX } from '@faker-js/faker';
 import fs from "fs/promises";
+import { Level, randomAgeAndDniFromEducationLevel } from "./utils/dni";
+import { getRandomDirection } from "./utils/getRandomDirection";
 import { pick } from "./utils/pick";
-import dniToAgeMap from './dni'
-
-const CURRENT_YEAR = 2023;
+import { randomElement } from "./utils/randomElement";
 
 const NAMES = [
   { name: "Sofía", gender: "F" },
@@ -50,6 +49,7 @@ const SURNAMES = [
 ];
 
 const NEIGHBORHOODS = [
+  { name: "NUEVA FORMOSA", houses: 30 },
   { name: "12 DE OCTUBRE", houses: 526 },
   { name: "2 DE ABRIL", houses: 1022 },
   { name: "BARRIO MILITAR", houses: 119 },
@@ -93,9 +93,6 @@ const NEIGHBORHOODS = [
   { name: "VIRGEN DE ITATÍ", houses: 782 },
 ];
 
-const randomElement = <T>(arr: Array<T>) =>
-  arr[Math.floor(Math.random() * arr.length)];
-
 function getRandomQuantity<T>(max: number, arr: Array<T>) {
   const selected: Array<T> = [];
 
@@ -111,16 +108,16 @@ function getRandomQuantity<T>(max: number, arr: Array<T>) {
   return selected;
 }
 
-const unique = <T>(
-  callback: () => T,
+const unique = <T, A>(
+  callback: (...args: A[]) => T,
   includes: (arr: Array<T>, elmt: T) => boolean = Array.prototype.includes.call
 ) => {
   const selected: Array<T> = [];
 
-  return () => {
+  return (...args: A[]) => {
     let result;
     while (true) {
-      result = callback();
+      result = callback(...args);
       const included = includes(selected, result);
       if (!included) {
         selected.push(result);
@@ -130,36 +127,11 @@ const unique = <T>(
   };
 };
 
-const BIRTHS_BY_YEAR = 2_000_000;
-const sumOrMinus = (num: number) =>
-  Math.random() > 0.5 ? num - 1000 : num + 1000;
-
-const getRandomDni = (
-  min: number = 46_000_000
-): { dni: number; age: number } => {
-  const generated = Math.floor(min + Math.random() * 10_000_000);
-  const age = 41 - Math.floor(generated / sumOrMinus(BIRTHS_BY_YEAR));
-
-  return { dni: generated, age };
-};
-
-function getRandomBirthDay() {
-  const date = fakerES_MX.date.birthdate({
-      min: 6,
-      max: 23,
-      mode: 'age',
-    });
-  
-  return {
-    age: date.getFullYear() - CURRENT_YEAR
-  }
-}
-
 const QTY = 3; // quantity - cantidad
 
-type Gender = 'M' | 'F';
+type Gender = "M" | "F";
 
-const getRandomNames = (): ({ names : string[], gender: Gender }) => {
+const getRandomNames = (): { names: string[]; gender: Gender } => {
   const gender = pick("M", "F");
   try {
     const selected = getRandomQuantity(QTY, NAMES)
@@ -168,8 +140,8 @@ const getRandomNames = (): ({ names : string[], gender: Gender }) => {
     if (selected.length > 0) {
       return {
         names: selected,
-        gender
-      }
+        gender,
+      };
     }
     throw selected;
   } catch (_) {
@@ -177,7 +149,7 @@ const getRandomNames = (): ({ names : string[], gender: Gender }) => {
   }
 };
 const getRandomSurnames = () => getRandomQuantity(QTY, SURNAMES);
-const getRandomNeighborhood = unique(
+export const getRandomNeighborhood = unique(
   () => {
     const neighborhood = randomElement(NEIGHBORHOODS);
 
@@ -188,29 +160,36 @@ const getRandomNeighborhood = unique(
       house: randomHouse,
     };
   },
-  (arr, elmt) => arr.some((e) => e.house == elmt.house)
+  (arr, elmt) => arr.some((e) => e.house == elmt.house && e.name == elmt.name)
 );
 
-const getUniqueDni = unique(getRandomDni, (arr, elmt) =>
+const getRandomNationality = () =>
+  pick("Argentina", pick("Paraguay", "Uruguay"));
+
+const getUniqueDNIAndDateFromLevel = unique<
+  ReturnType<typeof randomAgeAndDniFromEducationLevel>,
+  Level
+>(randomAgeAndDniFromEducationLevel, (arr, elmt) =>
   arr.some((e) => e.dni == elmt.dni)
 );
 
+const randomLevel = () => {
+  return randomElement(['inicial', 'primaria', 'secundaria', 'superior']) satisfies Level;
+}
+
 function createRandomStudent() {
-  const { dni, age } = getUniqueDni();
-  const { name: neighborhood, house } = getRandomNeighborhood();
+  const studyLevel = randomLevel();
+  const { dni, fecha_de_nacimiento } = getUniqueDNIAndDateFromLevel(studyLevel);
   const { names, gender } = getRandomNames();
   return {
     _id: dni,
-    nombres: names, 
+    nombres: names,
     apellidos: getRandomSurnames(),
-    domicilio: {
-      barrio: neighborhood,
-      casa: house,
-    },
+    domicilio: getRandomDirection(),
     genero: gender,
-    edad: age,
-    fecha_de_nacimiento: getRandomBirthDay()
-
+    nacionalidad: getRandomNationality(),
+    fecha_de_nacimiento, 
+    nivel_estudio: studyLevel
   };
 }
 
@@ -220,7 +199,7 @@ async function main(q: number) {
     console.log(i);
     alumnos.push(createRandomStudent());
   }
-  await fs.appendFile("./alumnado.json", JSON.stringify(alumnos));
+  await fs.writeFile("./alumnado.json", JSON.stringify(alumnos));
 }
 
-main(1_000);
+main(10_000);
