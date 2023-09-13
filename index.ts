@@ -96,10 +96,10 @@ const NEIGHBORHOODS = [
 const randomElement = <T>(arr: Array<T>) =>
   arr[Math.floor(Math.random() * arr.length)];
 
-function getRandomQuantity<T>(qty: number, arr: Array<T>) {
+function getRandomQuantity<T>(max: number, arr: Array<T>) {
   const selected: Array<T> = [];
 
-  for (let i = 0; i < qty; i++) {
+  for (let i = 0; i < max; i++) {
     const random = randomElement(arr);
     if (!selected.includes(random)) selected.push(random);
     if (selected.length == 0) continue;
