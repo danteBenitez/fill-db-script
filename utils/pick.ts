@@ -1,0 +1,1 @@
+export const pick = <T>(opt1: T, opt2: T) => (Math.random() > 0.5 ? opt1 : opt2);

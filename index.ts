@@ -1,26 +1,29 @@
+import { fakerES_MX } from '@faker-js/faker';
 import fs from "fs/promises";
+import { pick } from "./utils/pick";
+import dniToAgeMap from './dni'
+
+const CURRENT_YEAR = 2023;
 
 const NAMES = [
-  "Sofía",
-  "Mateo",
-  "Valentina",
-  "Agustín",
-  "Martina",
-  "Santiago",
-  "Camila",
-  "Nicolás",
-  "Victoria",
-  "Joaquín",
-  "Lucía",
-  "Facundo",
-  "Florencia",
-  "Matías",
-  "Milagros",
-  "Leonardo",
-  "Rocío",
-  "Tomás",
-  "Sol",
-  "Emiliano",
+  { name: "Sofía", gender: "F" },
+  { name: "Mateo", gender: "M" },
+  { name: "Agustín", gender: "M" },
+  { name: "Martina", gender: "F" },
+  { name: "Santiago", gender: "M" },
+  { name: "Nicolás", gender: "M" },
+  { name: "Victoria", gender: "F" },
+  { name: "Joaquín", gender: "M" },
+  { name: "Lucía", gender: "F" },
+  { name: "Facundo", gender: "M" },
+  { name: "Florencia", gender: "F" },
+  { name: "Matías", gender: "M" },
+  { name: "Milagros", gender: "F" },
+  { name: "Leonardo", gender: "M" },
+  { name: "Rocío", gender: "F" },
+  { name: "Tomás", gender: "M" },
+  { name: "Sol", gender: "F" },
+  { name: "Emiliano", gender: "M" },
 ];
 
 const SURNAMES = [
@@ -87,10 +90,8 @@ const NEIGHBORHOODS = [
   { name: "1° DE MAYO", houses: 184 },
   { name: "EL PORVENIR", houses: 352 },
   { name: "BERNARDINO RIVADAVIA", houses: 890 },
-  { name: "VIRGEN DE ITATÍ", houses: 782 }
+  { name: "VIRGEN DE ITATÍ", houses: 782 },
 ];
-
-
 
 const randomElement = <T>(arr: Array<T>) =>
   arr[Math.floor(Math.random() * arr.length)];
@@ -101,6 +102,7 @@ function getRandomQuantity<T>(qty: number, arr: Array<T>) {
   for (let i = 0; i < qty; i++) {
     const random = randomElement(arr);
     if (!selected.includes(random)) selected.push(random);
+    if (selected.length == 0) continue;
     if (Math.random() > 0.5) {
       break;
     }
@@ -113,71 +115,112 @@ const unique = <T>(
   callback: () => T,
   includes: (arr: Array<T>, elmt: T) => boolean = Array.prototype.includes.call
 ) => {
-    const selected: Array<T> = [];
+  const selected: Array<T> = [];
 
-    return () => {
-
-        let result;
-        while(true) {
-            result = callback();
-            const included = includes(selected, result);
-            if (!included) {
-                selected.push(result);
-                return result;
-            }
-        }
-
+  return () => {
+    let result;
+    while (true) {
+      result = callback();
+      const included = includes(selected, result);
+      if (!included) {
+        selected.push(result);
+        return result;
+      }
     }
+  };
 };
 
 const BIRTHS_BY_YEAR = 2_000_000;
-const sumOrMinus = (num: number) => Math.random() > 0.5 ? num - 1000 : num + 1000;
+const sumOrMinus = (num: number) =>
+  Math.random() > 0.5 ? num - 1000 : num + 1000;
 
-const getRandomDni = (min: number = 46_000_000): { dni: number, age: number} => {
+const getRandomDni = (
+  min: number = 46_000_000
+): { dni: number; age: number } => {
   const generated = Math.floor(min + Math.random() * 10_000_000);
   const age = 41 - Math.floor(generated / sumOrMinus(BIRTHS_BY_YEAR));
 
   return { dni: generated, age };
 };
 
-const QTY = 3;
+function getRandomBirthDay() {
+  const date = fakerES_MX.date.birthdate({
+      min: 6,
+      max: 23,
+      mode: 'age',
+    });
+  
+  return {
+    age: date.getFullYear() - CURRENT_YEAR
+  }
+}
 
-const getRandomNames = () => getRandomQuantity(QTY, NAMES);
+const QTY = 3; // quantity - cantidad
+
+type Gender = 'M' | 'F';
+
+const getRandomNames = (): ({ names : string[], gender: Gender }) => {
+  const gender = pick("M", "F");
+  try {
+    const selected = getRandomQuantity(QTY, NAMES)
+      .filter((n) => n.gender == gender)
+      .map((e) => e.name);
+    if (selected.length > 0) {
+      return {
+        names: selected,
+        gender
+      }
+    }
+    throw selected;
+  } catch (_) {
+    return getRandomNames();
+  }
+};
 const getRandomSurnames = () => getRandomQuantity(QTY, SURNAMES);
-const getRandomNeighborhood = unique(() => { 
+const getRandomNeighborhood = unique(
+  () => {
     const neighborhood = randomElement(NEIGHBORHOODS);
 
     const randomHouse = Math.floor(Math.random() * neighborhood.houses);
 
     return {
-        name: neighborhood.name,
-        house: randomHouse
+      name: neighborhood.name,
+      house: randomHouse,
     };
-}, (arr, elmt) => arr.some(e => e.house == elmt.house));
+  },
+  (arr, elmt) => arr.some((e) => e.house == elmt.house)
+);
 
-const getUniqueDni = unique(getRandomDni, (arr, elmt) => arr.some(e => e.dni == elmt.dni));
+const getUniqueDni = unique(getRandomDni, (arr, elmt) =>
+  arr.some((e) => e.dni == elmt.dni)
+);
 
 function createRandomStudent() {
   const { dni, age } = getUniqueDni();
-  const { name, house } = getRandomNeighborhood();
+  const { name: neighborhood, house } = getRandomNeighborhood();
+  const { names, gender } = getRandomNames();
   return {
     _id: dni,
-    nombres: getRandomNames(),
+    nombres: names, 
     apellidos: getRandomSurnames(),
     domicilio: {
-      barrio: name,
+      barrio: neighborhood,
       casa: house,
     },
+    genero: gender,
     edad: age,
+    fecha_de_nacimiento: getRandomBirthDay()
+
   };
 }
 
 async function main(q: number) {
   const alumnos = [];
   for (let i = 0; i < q; i++) {
+    console.log(i);
     alumnos.push(createRandomStudent());
   }
-  await fs.writeFile('./alumnado.json', JSON.stringify(alumnos));
+  await fs.appendFile("./alumnado.json", JSON.stringify(alumnos));
 }
 
-main(10_000);
+main(1_000);
