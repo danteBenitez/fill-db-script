@@ -1,5 +1,6 @@
 import { fakerES_MX } from "@faker-js/faker";
 import inRange from "./inRange";
+import { unique } from "./unique";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -32,7 +33,9 @@ const ageToDNI = {
   4: [61800000, 62800000],
 };
 
+
 function generateDNI(age: number) {
+  console.log('Age: ', age);
   if (age in ageToDNI) {
     const [min, max] = ageToDNI[age as keyof typeof ageToDNI];
 
@@ -44,6 +47,10 @@ function generateDNI(age: number) {
     throw new Error("Edad no válida");
   }
 }
+
+const generateUniqueDni = unique(generateDNI, 
+  (arr, e)  => arr.some(elmt => elmt == e)
+);
 
 export function getUniqueDNIAndDateFromLevel(level: Level) {
   let birthday: Date;
@@ -58,7 +65,7 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
       birthday = getRandomBirthday(inRange(2005, 2011));
       break;
     case "superior":
-      birthday = getRandomBirthday(inRange(1990, 2005));
+      birthday = getRandomBirthday(inRange(1997, 2005));
       break;
     default:
       throw new Error("Invalid level");
@@ -67,7 +74,7 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
   const age = CURRENT_YEAR - birthday.getFullYear();
 
   return {
-    dni: generateDNI(age),
+    dni: generateUniqueDni(age),
     fecha_de_nacimiento: birthday,
     edad: age,
   };

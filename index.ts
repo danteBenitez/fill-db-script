@@ -1,51 +1,58 @@
 import fs from "fs/promises";
-import { Level, randomAgeAndDniFromEducationLevel } from "./utils/dni";
-import { getRandomDirection } from "./utils/getRandomDirection";
+import { NAMES } from "./data/NAMES";
+import { createRandomStudent } from "./utils/createRandomStudent";
+import { Level } from "./utils/dni";
 import { pick } from "./utils/pick";
 import { randomElement } from "./utils/randomElement";
-
-const NAMES = [
-  { name: "Sofía", gender: "F" },
-  { name: "Mateo", gender: "M" },
-  { name: "Agustín", gender: "M" },
-  { name: "Martina", gender: "F" },
-  { name: "Santiago", gender: "M" },
-  { name: "Nicolás", gender: "M" },
-  { name: "Victoria", gender: "F" },
-  { name: "Joaquín", gender: "M" },
-  { name: "Lucía", gender: "F" },
-  { name: "Facundo", gender: "M" },
-  { name: "Florencia", gender: "F" },
-  { name: "Matías", gender: "M" },
-  { name: "Milagros", gender: "F" },
-  { name: "Leonardo", gender: "M" },
-  { name: "Rocío", gender: "F" },
-  { name: "Tomás", gender: "M" },
-  { name: "Sol", gender: "F" },
-  { name: "Emiliano", gender: "M" },
-];
+import { unique } from "./utils/unique";
 
 const SURNAMES = [
-  "García",
-  "Martínez",
+  "González",
   "Rodríguez",
   "López",
-  "Fernández",
-  "González",
+  "Martínez",
   "Pérez",
-  "Ramírez",
-  "Sánchez",
-  "Romero",
-  "Torres",
-  "Díaz",
-  "Alvarez",
-  "Ruiz",
-  "Hernández",
-  "Mendoza",
-  "Flores",
+  "Fernández",
   "Gómez",
+  "Sánchez",
+  "Díaz",
+  "Torres",
+  "Rivera",
+  "Romero",
   "Ortega",
+  "Hernández",
+  "Ramos",
+  "Alvarez",
+  "Jiménez",
+  "Moreno",
   "Silva",
+  "Vargas",
+  "Cabrera",
+  "Ruiz",
+  "Mendoza",
+  "Vargas",
+  "Soto",
+  "Aguilar",
+  "Giménez",
+  "Castro",
+  "Navarro",
+  "Luna",
+  "Rojas",
+  "Vega",
+  "Molina",
+  "Medina",
+  "Castillo",
+  "Chávez",
+  "Fuentes",
+  "Guerra",
+  "Campos",
+  "Olivares",
+  "Sanchez",
+  "Morales",
+  "Arias",
+  "Gutierrez",
+  "Cruz",
+  "Paz",
 ];
 
 const NEIGHBORHOODS = [
@@ -108,30 +115,11 @@ function getRandomQuantity<T>(max: number, arr: Array<T>) {
   return selected;
 }
 
-const unique = <T, A>(
-  callback: (...args: A[]) => T,
-  includes: (arr: Array<T>, elmt: T) => boolean = Array.prototype.includes.call
-) => {
-  const selected: Array<T> = [];
-
-  return (...args: A[]) => {
-    let result;
-    while (true) {
-      result = callback(...args);
-      const included = includes(selected, result);
-      if (!included) {
-        selected.push(result);
-        return result;
-      }
-    }
-  };
-};
-
 const QTY = 3; // quantity - cantidad
 
 type Gender = "M" | "F";
 
-const getRandomNames = (): { names: string[]; gender: Gender } => {
+export const getRandomNames = (): { names: string[]; gender: Gender } => {
   const gender = pick("M", "F");
   try {
     const selected = getRandomQuantity(QTY, NAMES)
@@ -148,7 +136,7 @@ const getRandomNames = (): { names: string[]; gender: Gender } => {
     return getRandomNames();
   }
 };
-const getRandomSurnames = () => getRandomQuantity(QTY, SURNAMES);
+export const getRandomSurnames = () => getRandomQuantity(QTY, SURNAMES);
 export const getRandomNeighborhood = unique(
   () => {
     const neighborhood = randomElement(NEIGHBORHOODS);
@@ -163,35 +151,16 @@ export const getRandomNeighborhood = unique(
   (arr, elmt) => arr.some((e) => e.house == elmt.house && e.name == elmt.name)
 );
 
-const getRandomNationality = () =>
-  pick("Argentina", pick("Paraguay", "Uruguay"));
+export const getRandomNationality = () => "Argentina";
 
-const getUniqueDNIAndDateFromLevel = unique<
-  ReturnType<typeof randomAgeAndDniFromEducationLevel>,
-  Level
->(randomAgeAndDniFromEducationLevel, (arr, elmt) =>
-  arr.some((e) => e.dni == elmt.dni)
-);
-
-const randomLevel = () => {
-  return randomElement(['inicial', 'primaria', 'secundaria', 'superior']) satisfies Level;
-}
-
-function createRandomStudent() {
-  const studyLevel = randomLevel();
-  const { dni, fecha_de_nacimiento } = getUniqueDNIAndDateFromLevel(studyLevel);
-  const { names, gender } = getRandomNames();
-  return {
-    _id: dni,
-    nombres: names,
-    apellidos: getRandomSurnames(),
-    domicilio: getRandomDirection(),
-    genero: gender,
-    nacionalidad: getRandomNationality(),
-    fecha_de_nacimiento, 
-    nivel_estudio: studyLevel
-  };
-}
+export const randomLevel = () => {
+  return randomElement([
+    "inicial",
+    "primaria",
+    "secundaria",
+    "superior",
+  ]) satisfies Level;
+};
 
 async function main(q: number) {
   const alumnos = [];
