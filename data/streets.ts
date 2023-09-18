@@ -55,27 +55,27 @@ const STREETS = {
     },
     "Las Lomitas": {
         "Eva Perón": {
-            manzana: [1, 10],
-            nro: [1, 50]
+            manzana: [1, 10] as  [number, number],
+            casa: [1, 50] as [number, number]
         },
         "Madrejón": {
-            manzana: [1, 5],
-            nro: [],
+            manzana: [1, 5] as [number, number],
+            casa: [1, 30] as [number, number],
         },
         "60 Viviendas": {
-            manzana: [1, 92],
-            casa: [1, 20]
+            manzana: [1, 92] as [number, number],
+            casa: [1, 20] as [number, number]
         },
-        "Libertad": [0, 600],
-        "Sarmiento": [0, 400]
+        "Libertad": [0, 600] as [number, number],
+        "Sarmiento": [0, 400] as [number, number]
     },
     "Buena Vista": {
-        "Gral. Manuel Belgrano": [1, 498],
-        "M. Moreno": [200, 498],
-        "Libertad": [100, 498],
+        "Gral. Manuel Belgrano": [1, 498] as [number, number],
+        "M. Moreno": [200, 498] as [number, number],
+        "Libertad": [100, 498] as [number, number],
         "12 de Octubre": {
-            manzana: [1, 2],
-            casa: [1, 20]
+            manzana: [1, 2] as [number, number],
+            casa: [1, 20] as [number, number]
         }
     }
 }
@@ -100,6 +100,34 @@ export default function createRandomDirection() {
                 ...createDirectionFromFormosa(),
                 localidad: randomLocation
             }
+        case 'Las Lomitas':
+        case 'Buena Vista': {
+            const [street, info] = randomElement(
+                Object.entries(STREETS[randomLocation])
+            );
+            
+            if (Array.isArray(info)) {
+                const [min, max] = info;
+
+                return {
+                    localidad: randomLocation,
+                    calle: street,
+                    nro: inRange(min, max)
+                }
+            } else {
+                const {
+                    manzana,
+                    casa
+                } = info;
+
+                return {
+                    localidad: randomLocation,
+                    manzana: inRange(...manzana),
+                    casa: inRange(...casa)
+                }
+            }
+        }
+
         default:
             throw new Error('Not exclusive switch on locations');
     }
