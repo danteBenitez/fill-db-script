@@ -52,6 +52,31 @@ const STREETS = {
             casa: [1, 1500] as [number, number],
             sector: ['A', 'B', 'C', 'D'] as string[]
         }
+    },
+    "Las Lomitas": {
+        "Eva Perón": {
+            manzana: [1, 10],
+            nro: [1, 50]
+        },
+        "Madrejón": {
+            manzana: [1, 5],
+            nro: [],
+        },
+        "60 Viviendas": {
+            manzana: [1, 92],
+            casa: [1, 20]
+        },
+        "Libertad": [0, 600],
+        "Sarmiento": [0, 400]
+    },
+    "Buena Vista": {
+        "Gral. Manuel Belgrano": [1, 498],
+        "M. Moreno": [200, 498],
+        "Libertad": [100, 498],
+        "12 de Octubre": {
+            manzana: [1, 2],
+            casa: [1, 20]
+        }
     }
 }
 

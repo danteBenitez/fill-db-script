@@ -280,7 +280,6 @@ const SUBJECTS = {
 };
 
 export default {
-  ...SUBJECTS,
   ...{
     PRIMARIA: [
       "Lengua y Literatura",
@@ -721,3 +720,5 @@ export default {
     },
   },
 };
+
+export async function generateGradesDocuments() {}

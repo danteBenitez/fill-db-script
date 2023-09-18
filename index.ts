@@ -168,6 +168,7 @@ async function main(q: number) {
     console.log(i);
     alumnos.push(createRandomStudent());
   }
+
   await fs.writeFile("./alumnado.json", JSON.stringify(alumnos));
 }
 

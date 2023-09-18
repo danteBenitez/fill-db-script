@@ -19,6 +19,7 @@ function getRandomInstitutionsFromDepartment(department, number, scope, level) {
         ec_sec: 1,
         ec_SNU: 1,
         ambito: 1,
+        CUEanexo: 1
       },
     },
     {
