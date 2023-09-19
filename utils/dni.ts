@@ -1,6 +1,7 @@
 import { fakerES_MX } from "@faker-js/faker";
 import inRange from "./inRange";
 import { unique } from "./unique";
+import { randomElement } from "./randomElement";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -52,20 +53,35 @@ const generateUniqueDni = unique(generateDNI,
   (arr, e)  => arr.some(elmt => elmt == e)
 );
 
+const ORIENTATIONS = [
+  "MOD_CS_NATURALES",
+  "MOD_CS_SOCIALES",
+  "MOD_PRODUCCION_BIENES_SERVICIOS"
+];
+
 export function getUniqueDNIAndDateFromLevel(level: Level) {
   let birthday: Date;
+  let grade: number;
+  let orientation: string | null = null;
   switch (level) {
     case "inicial":
       birthday = getRandomBirthday(inRange(2018, 2019));
+      grade = (birthday.getFullYear() - 2018) + 1;
       break;
     case "primario":
       birthday = getRandomBirthday(inRange(2012, 2017));
+      grade = (birthday.getFullYear() - 2012) + 1;
       break;
     case "secundario":
       birthday = getRandomBirthday(inRange(2005, 2011));
+      grade = (birthday.getFullYear() - 2005) + 1;
+      if (grade >= 4) {
+          orientation = randomElement(ORIENTATIONS);
+      }
       break;
     case "superior":
       birthday = getRandomBirthday(inRange(1997, 2005));
+      grade = (birthday.getFullYear() - 1997) + 1;
       break;
     default:
       throw new Error("Invalid level");
@@ -77,6 +93,8 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
     dni: generateUniqueDni(age),
     fecha_de_nacimiento: birthday,
     edad: age,
+    grado: grade,
+    orientacion: orientation ?? null
   };
 }
 

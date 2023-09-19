@@ -6,7 +6,8 @@ import {
 } from "..";
 import institutions from "../data/establecimientos-elegidos-final";
 import createRandomDirection from "../data/streets";
-import { getUniqueDNIAndDateFromLevel } from "./dni";
+import subjects from "../data/subjects";
+import { Level, getUniqueDNIAndDateFromLevel } from "./dni";
 import { pick } from "./pick";
 import { randomElement } from "./randomElement";
 
@@ -26,16 +27,20 @@ export function createRandomStudent() {
   try {
     const studyLevel = randomLevel();
     const { localidad, ...rest } = createRandomDirection();
-    const institution = LEVEL_TO_INSTITUTIONS[
+    const institutions = LEVEL_TO_INSTITUTIONS[
       studyLevel.toUpperCase() as keyof typeof LEVEL_TO_INSTITUTIONS
     ].filter((i) => i.localidad == localidad.toUpperCase());
 
-    const { dni, fecha_de_nacimiento, edad } =
+    const { dni, fecha_de_nacimiento, edad, grado, orientacion } =
       getUniqueDNIAndDateFromLevel(studyLevel);
+
+    const institution = institutions.find(i => i.localidad == localidad.toUpperCase());
+    if (!institution) throw institution;
+    const career = getRandomCareer(institution.nombre, studyLevel);
+    const gradeOrYear = studyLevel === "inicial" ? "grado" : "año";
     const { names, gender } = getRandomNames();
     const surnames = getRandomSurnames();
 
-    console.log(localidad);
     return {
       _id: dni,
       nombres: names,
@@ -45,9 +50,10 @@ export function createRandomStudent() {
       nacionalidad: getRandomNationality(),
       fecha_de_nacimiento,
       nivel_estudio: studyLevel,
-      cue_anexo: randomElement(
-        institution.filter((i) => i.localidad == localidad.toUpperCase())
-      ).CUEanexo,
+      [gradeOrYear]: grado,
+      orientacion,
+      carrera: career,
+      cue_anexo: institution?.CUEanexo,
       edad,
       tutor: [
         ...getRandomNames()["names"],
@@ -57,4 +63,19 @@ export function createRandomStudent() {
   } catch (_) {
     return createRandomStudent();
   }
+}
+
+function getRandomCareer(institution: string, studyLevel: Level) {
+  const ints = institutions.find(i => i.nombre == institution.toUpperCase());
+
+  if (ints?.ec_SNU == 1) {
+    const subjectsAvailable = subjects["TERCIARIO"][
+      institution as keyof typeof subjects["TERCIARIO"]
+    ];
+
+    return randomElement(Object.keys(subjectsAvailable));
+  } else {
+    return null;
+  }
+
 }

@@ -19,17 +19,26 @@ export async function generateRandomGrades(
   students: Student[],
   subjects: Subject[]
 ) {
-  const grades = [];
+  const grades: {
+    _id: string;
+    notas: number[];
+    condicion: "Aprobado" | "Desaprobado";
+  }[] = [];
 
   for (const year of [2021, 2022]) {
     for (const student of students) {
       for (const subject of subjects) {
         for (let trimester = 1; trimester <= 3; trimester++) {
           const _id = generateUniqueId(year, student, subject, trimester);
+          const gradeForStudent = createGradeForStudent(student);
+          const avg =
+            gradeForStudent.reduce((acc, g) => acc + g) /
+            gradeForStudent.length;
 
           grades.push({
             _id,
-            notas: createGradeForStudent(student),
+            notas: gradeForStudent,
+            condicion: avg >= 6 ? "Aprobado" : "Desaprobado",
           });
         }
       }
