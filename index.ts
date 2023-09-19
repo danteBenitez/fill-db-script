@@ -156,8 +156,8 @@ export const getRandomNationality = () => "Argentina";
 export const randomLevel = () => {
   return randomElement([
     "inicial",
-    "primaria",
-    "secundaria",
+    "primario",
+    "secundario",
     "superior",
   ]) satisfies Level;
 };

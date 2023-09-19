@@ -32,20 +32,35 @@ db[ALL_DOCUMENTS_COLLECTION].aggregate([
     MERGE_OPTIONS
 ])
 
-// Nueve establecimientos de nivel primario
+// Siete establecimientos de nivel primario
 db[ALL_DOCUMENTS_COLLECTION].aggregate([
     {
         $match: {
-            ec_pri: 1
+            ec_pri: 1,
+            localidad: { $not: /Formosa/i }
         }
     },
     {
-        $limit: 9
+        $limit: 7
     },
     MERGE_OPTIONS
 ]);
 
-// Nueve establecimientos de nivel secundario
+// Nos aseguramos de agregar instituciones de la 
+// localidad de Laguna Blanca
+db[ALL_DOCUMENTS_COLLECTION].aggregate([
+    {
+        $match: {
+            localidad: /Laguna Blanca/i
+        }
+    },
+    {
+        $limit: 7
+    },
+    MERGE_OPTIONS
+]);
+
+// Doce establecimientos de nivel secundario
 db[ALL_DOCUMENTS_COLLECTION].aggregate([
     {
         $match: {
@@ -53,7 +68,7 @@ db[ALL_DOCUMENTS_COLLECTION].aggregate([
         }
     },
     {
-        $limit: 9
+        $limit: 7
     },
     MERGE_OPTIONS
 ]);

@@ -4,10 +4,9 @@ import {
   getRandomSurnames,
   randomLevel,
 } from "..";
-import institutions from "../data/establecimientos-filtrados";
+import institutions from "../data/establecimientos-elegidos-final";
 import createRandomDirection from "../data/streets";
 import { getUniqueDNIAndDateFromLevel } from "./dni";
-import { getRandomDirection } from "./getRandomDirection";
 import { pick } from "./pick";
 import { randomElement } from "./randomElement";
 
@@ -24,33 +23,38 @@ const LEVEL_TO_INSTITUTIONS = {
 };
 
 export function createRandomStudent() {
-  const studyLevel = randomLevel();
-  const institution =
-    LEVEL_TO_INSTITUTIONS[
+  try {
+    const studyLevel = randomLevel();
+    const { localidad, ...rest } = createRandomDirection();
+    const institution = LEVEL_TO_INSTITUTIONS[
       studyLevel.toUpperCase() as keyof typeof LEVEL_TO_INSTITUTIONS
-    ];
+    ].filter((i) => i.localidad == localidad.toUpperCase());
 
-  const { dni, fecha_de_nacimiento, edad } =
-    getUniqueDNIAndDateFromLevel(studyLevel);
-  const { names, gender } = getRandomNames();
-  const surnames = getRandomSurnames();
-  const { localidad, ...rest } = getRandomDirection();
-  return {
-    _id: dni,
-    nombres: names,
-    apellidos: surnames,
-    domicilio: { localidad, ...rest },
-    genero: gender,
-    nacionalidad: getRandomNationality(),
-    fecha_de_nacimiento,
-    nivel_estudio: studyLevel,
-    cue_anexo: randomElement(
-      institution.filter((i) => i.localidad == localidad)
-    ).CUEanexo,
-    edad,
-    tutor: [
-      ...getRandomNames()["names"],
-      ...pick(surnames, getRandomSurnames()),
-    ].join(" "),
-  };
+    const { dni, fecha_de_nacimiento, edad } =
+      getUniqueDNIAndDateFromLevel(studyLevel);
+    const { names, gender } = getRandomNames();
+    const surnames = getRandomSurnames();
+
+    console.log(localidad);
+    return {
+      _id: dni,
+      nombres: names,
+      apellidos: surnames,
+      domicilio: { localidad, ...rest },
+      genero: gender,
+      nacionalidad: getRandomNationality(),
+      fecha_de_nacimiento,
+      nivel_estudio: studyLevel,
+      cue_anexo: randomElement(
+        institution.filter((i) => i.localidad == localidad.toUpperCase())
+      ).CUEanexo,
+      edad,
+      tutor: [
+        ...getRandomNames()["names"],
+        ...pick(surnames, getRandomSurnames()),
+      ].join(" "),
+    };
+  } catch (_) {
+    return createRandomStudent();
+  }
 }

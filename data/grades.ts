@@ -55,8 +55,8 @@ function createGradeForStudent(student: Student) {
   // Decide what's the minimum
   const levelToMinGrade = {
     inicial: 10,
-    primaria: 7,
-    secundaria: 1,
+    primario: 7,
+    secundario: 1,
     superior: 1,
   };
 

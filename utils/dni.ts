@@ -4,7 +4,7 @@ import { unique } from "./unique";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
-export type Level = "inicial" | "primaria" | "secundaria" | "superior";
+export type Level = "inicial" | "primario" | "secundario" | "superior";
 
 const ageToDNI = {
   27: [38800000, 39800000],
@@ -58,10 +58,10 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
     case "inicial":
       birthday = getRandomBirthday(inRange(2018, 2019));
       break;
-    case "primaria":
+    case "primario":
       birthday = getRandomBirthday(inRange(2012, 2017));
       break;
-    case "secundaria":
+    case "secundario":
       birthday = getRandomBirthday(inRange(2005, 2011));
       break;
     case "superior":
