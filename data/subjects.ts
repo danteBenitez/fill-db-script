@@ -441,7 +441,7 @@ export default {
       },
     },
     TERCIARIO: {
-      "Instituto Politécnico Formosa": {
+      "INSTITUTO POLITÉCNICO FORMOSA": {
         tecnicatura_superior_mecatronica: {
           primer_cuatrimestre: [
             "Inglés Técnico",
@@ -553,7 +553,7 @@ export default {
           ],
         },
       },
-      'Instituto Superior de Formación Docente "Félix Atilio Cabrera"': {
+      'ISFDCYT FELIX ATILIO CABRERA': {
         "Profesorado de Inglés": {
           primer_cuatrimestre: [
             "Alfabetización Académica (Taller)",
@@ -621,7 +621,7 @@ export default {
           ],
         },
       },
-      'Escuela Normal Superior "República del Paraguay"': {
+      'ESCUELA NORMAL SUPERIOR REPÚBLICA DEL PARAGUAY': {
         "Profesorado de Educación Primaria": {
           primer_año: [
             "Ciencias Naturales I (Química)",

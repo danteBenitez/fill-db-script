@@ -16,12 +16,14 @@ const primaryInstitutions = institutions.filter((i) => i.ec_pri == 1);
 const secondaryInstitutions = institutions.filter((i) => i.ec_sec == 1);
 const higherInstitutions = institutions.filter((i) => i.ec_SNU == 1);
 
+
 const LEVEL_TO_INSTITUTIONS = {
   INICIAL: initialInstitutions,
   PRIMARIO: primaryInstitutions,
   SECUNDARIO: secondaryInstitutions,
   SUPERIOR: higherInstitutions,
 };
+
 
 export function createRandomStudent() {
   try {
@@ -60,7 +62,8 @@ export function createRandomStudent() {
         ...pick(surnames, getRandomSurnames()),
       ].join(" "),
     };
-  } catch (_) {
+  } catch (e) {
+    if (e instanceof Error) throw e;
     return createRandomStudent();
   }
 }
@@ -72,7 +75,7 @@ function getRandomCareer(institution: string, studyLevel: Level) {
     const subjectsAvailable = subjects["TERCIARIO"][
       institution as keyof typeof subjects["TERCIARIO"]
     ];
-
+    console.log(subjectsAvailable);
     return randomElement(Object.keys(subjectsAvailable));
   } else {
     return null;
