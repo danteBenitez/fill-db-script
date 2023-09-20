@@ -36,7 +36,6 @@ const ageToDNI = {
 
 
 function generateDNI(age: number) {
-  console.log('Age: ', age);
   if (age in ageToDNI) {
     const [min, max] = ageToDNI[age as keyof typeof ageToDNI];
 
@@ -66,22 +65,22 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
   switch (level) {
     case "inicial":
       birthday = getRandomBirthday(inRange(2018, 2019));
-      grade = (birthday.getFullYear() - 2018) + 1;
+      grade = Math.abs((birthday.getFullYear() - 2018)) + 1;
       break;
     case "primario":
       birthday = getRandomBirthday(inRange(2012, 2017));
-      grade = (birthday.getFullYear() - 2012) + 1;
+      grade = Math.abs((birthday.getFullYear() - 2017)) + 1;
       break;
     case "secundario":
       birthday = getRandomBirthday(inRange(2005, 2011));
-      grade = (birthday.getFullYear() - 2005) + 1;
+      grade = Math.abs((birthday.getFullYear() - 2011)) + 1;
       if (grade >= 4) {
           orientation = randomElement(ORIENTATIONS);
       }
       break;
     case "superior":
       birthday = getRandomBirthday(inRange(1997, 2005));
-      grade = (birthday.getFullYear() - 1997) + 1;
+      grade = Math.abs((birthday.getFullYear() - 2005)) + 1;
       break;
     default:
       throw new Error("Invalid level");
@@ -94,7 +93,7 @@ export function getUniqueDNIAndDateFromLevel(level: Level) {
     fecha_de_nacimiento: birthday,
     edad: age,
     grado: grade,
-    orientacion: orientation ?? null
+    orientacion: orientation 
   };
 }
 

@@ -1,32 +1,33 @@
 import { createRandomStudent } from "../utils/createRandomStudent";
 import inRange from "../utils/inRange";
-import { randomElement } from "../utils/randomElement";
-import SUBJECTS from "./subjects";
+import SUBJECTS from '../data/subjects-with-id';
+import PLANS from '../data/plan';
 
 type Student = ReturnType<typeof createRandomStudent>;
-type Subject = (typeof SUBJECTS)[keyof typeof SUBJECTS] & { id: number };
+type Subject = (typeof SUBJECTS)[number];
 
-const LEVEL_TO_CODE = {
-  INICIAL: 101,
-  PRIMARIA: 102,
-  SECUNDARIA: 110,
-  SUPERIOR: 115,
-};
-
-// TODO: Add CUE data to the subjects to
-// TODO: generate the entries for this function
 export async function generateRandomGrades(
   students: Student[],
-  subjects: Subject[]
 ) {
   const grades: {
     _id: string;
     notas: number[];
     condicion: "Aprobado" | "Desaprobado";
   }[] = [];
-
+  let i = 0;
   for (const year of [2021, 2022]) {
     for (const student of students) {
+      const plan = PLANS.find(p => p.id == student.plan_id);
+      if (!plan) {
+        throw new Error('Plan inválido!' + student.plan_id);
+      }
+
+      const formattedPlan = "Fsa23" + plan.id;
+      const subjects = SUBJECTS.filter(s => s.plan_id == formattedPlan);
+      if (subjects.length == 0) {
+        continue;
+      }
+
       for (const subject of subjects) {
         for (let trimester = 1; trimester <= 3; trimester++) {
           const _id = generateUniqueId(year, student, subject, trimester);
@@ -40,6 +41,7 @@ export async function generateRandomGrades(
             notas: gradeForStudent,
             condicion: avg >= 6 ? "Aprobado" : "Desaprobado",
           });
+          console.log(`Nota ${i} generada`);
         }
       }
     }
@@ -54,7 +56,7 @@ function generateUniqueId(
   subject: Subject,
   trimester: number
 ) {
-  return `${year}${trimester}${student._id}${subject.id}`;
+  return `${year}${trimester}${student._id}${subject._id}`;
 }
 
 function createGradeForStudent(student: Student) {

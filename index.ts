@@ -5,6 +5,8 @@ import { Level } from "./utils/dni";
 import { pick } from "./utils/pick";
 import { randomElement } from "./utils/randomElement";
 import { unique } from "./utils/unique";
+import { generateRandomGrades } from "./data/grades";
+import subjectsWithId from "./data/subjects-with-id";
 
 const SURNAMES = [
   "González",
@@ -168,8 +170,9 @@ async function main(q: number) {
     console.log(i);
     alumnos.push(createRandomStudent());
   }
-
+  const grades = await generateRandomGrades(alumnos);
   await fs.writeFile("./alumnado.json", JSON.stringify(alumnos));
+  await fs.writeFile("./notas.json", JSON.stringify(grades));
 }
 
 main(10_000);

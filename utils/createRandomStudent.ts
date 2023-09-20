@@ -7,7 +7,9 @@ import {
 import institutions from "../data/establecimientos-elegidos-final";
 import createRandomDirection from "../data/streets";
 import subjects from "../data/subjects";
+import { LEVEL_TO_CODE } from "./LEVEL_TO_CODE";
 import { Level, getUniqueDNIAndDateFromLevel } from "./dni";
+import { generatePlanId } from "./generatePlanId";
 import { pick } from "./pick";
 import { randomElement } from "./randomElement";
 
@@ -16,14 +18,12 @@ const primaryInstitutions = institutions.filter((i) => i.ec_pri == 1);
 const secondaryInstitutions = institutions.filter((i) => i.ec_sec == 1);
 const higherInstitutions = institutions.filter((i) => i.ec_SNU == 1);
 
-
 const LEVEL_TO_INSTITUTIONS = {
   INICIAL: initialInstitutions,
   PRIMARIO: primaryInstitutions,
   SECUNDARIO: secondaryInstitutions,
   SUPERIOR: higherInstitutions,
 };
-
 
 export function createRandomStudent() {
   try {
@@ -36,14 +36,15 @@ export function createRandomStudent() {
     const { dni, fecha_de_nacimiento, edad, grado, orientacion } =
       getUniqueDNIAndDateFromLevel(studyLevel);
 
-    const institution = institutions.find(i => i.localidad == localidad.toUpperCase());
+    const institution = institutions.find(
+      (i) => i.localidad == localidad.toUpperCase()
+    );
     if (!institution) throw institution;
     const career = getRandomCareer(institution.nombre, studyLevel);
-    const gradeOrYear = studyLevel === "inicial" ? "grado" : "año";
     const { names, gender } = getRandomNames();
     const surnames = getRandomSurnames();
 
-    return {
+    const result = {
       _id: dni,
       nombres: names,
       apellidos: surnames,
@@ -51,17 +52,27 @@ export function createRandomStudent() {
       genero: gender,
       nacionalidad: getRandomNationality(),
       fecha_de_nacimiento,
-      nivel_estudio: studyLevel,
-      [gradeOrYear]: grado,
-      orientacion,
+      plan_id: generatePlanId(studyLevel),
       carrera: career,
+      cursado: {
+        2022: {
+          año: grado,
+          nivel_estudio_id: LEVEL_TO_CODE[studyLevel.toUpperCase() as keyof typeof LEVEL_TO_CODE],
+          nivel_estudio: studyLevel,
+        },
+        2023: {
+          ...addAYearToLevel(grado, studyLevel)
+        }
+      },
       cue_anexo: institution?.CUEanexo,
       edad,
+      fecha_ingreso: getRandomEntryDate(2022),
       tutor: [
         ...getRandomNames()["names"],
         ...pick(surnames, getRandomSurnames()),
       ].join(" "),
     };
+    return result;
   } catch (e) {
     if (e instanceof Error) throw e;
     return createRandomStudent();
@@ -69,16 +80,66 @@ export function createRandomStudent() {
 }
 
 function getRandomCareer(institution: string, studyLevel: Level) {
-  const ints = institutions.find(i => i.nombre == institution.toUpperCase());
+  const ints = institutions.find((i) => i.nombre == institution.toUpperCase());
 
   if (ints?.ec_SNU == 1) {
-    const subjectsAvailable = subjects["TERCIARIO"][
-      institution as keyof typeof subjects["TERCIARIO"]
-    ];
-    console.log(subjectsAvailable);
+    const subjectsAvailable =
+      subjects["TERCIARIO"][
+        institution as keyof (typeof subjects)["TERCIARIO"]
+      ];
     return randomElement(Object.keys(subjectsAvailable));
   } else {
     return null;
   }
+}
 
+type ReturnAddYear = {
+  grado: number,
+  nivel_estudio: Level,
+  nivel_estudio_id: typeof LEVEL_TO_CODE[keyof typeof LEVEL_TO_CODE],
+}
+
+function addAYearToLevel(grade: number, level: Level): ReturnAddYear {
+  switch (level) {
+    case 'inicial':
+      return grade >= 2 ? {
+        grado: 1,
+        nivel_estudio: "primario",
+        nivel_estudio_id: 102
+      } : {
+        grado: 2,
+        nivel_estudio: "inicial",
+        nivel_estudio_id: 101
+      }
+    case 'primario': 
+      return grade >= 6 ? {
+        grado: 1,
+        nivel_estudio: "secundario",
+        nivel_estudio_id: 110
+      } : {
+        grado: grade + 1,
+        nivel_estudio: "primario",
+        nivel_estudio_id: 102
+      }
+    case "secundario": 
+      return grade >= 6 ? {
+        grado: 1,
+        nivel_estudio: "superior",
+        nivel_estudio_id: 115
+      } : {
+        grado: grade + 1,
+        nivel_estudio: "secundario",
+        nivel_estudio_id: 110
+      }
+    case "superior": 
+      return {
+        grado: grade + 1,
+        nivel_estudio: "superior",
+        nivel_estudio_id: 115
+      }
+  }
+}
+
+function getRandomEntryDate(year: number) {
+  return pick(new Date(year, 3, 3), new Date(year, 6, 7));
 }

@@ -721,4 +721,3 @@ export default {
   },
 };
 
-export async function generateGradesDocuments() {}
