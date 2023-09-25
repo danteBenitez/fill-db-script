@@ -33,10 +33,10 @@ export async function generateRandomGrades(
         throw new Error('Plan inválido!' + student.cursado[year as 2021 | 2022].plan_id);
       }
 
-      const formattedPlan = "Fsa23" + plan.id;
-      const subjects = SUBJECTS.filter(s => s.plan_id == formattedPlan);
+      const subjects = SUBJECTS.filter(s => s.plan_id == plan.id);
       if (subjects.length == 0) {
         console.log("No hay materias para el plan", plan);
+        continue;
       }
 
       for (const subject of subjects) {

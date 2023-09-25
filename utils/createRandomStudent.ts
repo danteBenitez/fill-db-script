@@ -52,9 +52,7 @@ export function createRandomStudent() {
     
     const currentPlanId = generatePlanId(studyLevel);
     const nextPlanId = generatePlanId(nextYearInfo.nivel_estudio);
-    if (!nextPlanId) {
-      throw new Error('ID de plan inválido: ' + nextPlanId + " " + nextYearInfo.nivel_estudio)
-    }
+
     const result = {
       _id: dni,
       nombres: names,

@@ -8,10 +8,11 @@ export function generatePlanId(level: Level): string {
   const randomId = randomElement(
     PLANS.map((p) => p.id).filter(
       (p) => {
-          const expected = LEVEL_TO_CODE[level.toUpperCase() as keyof typeof LEVEL_TO_CODE]
-          return p.toString().startsWith(expected.toString());
+          const prefixedCode = "Fsa23" + LEVEL_TO_CODE[level.toUpperCase() as keyof typeof LEVEL_TO_CODE];
+          return p.toString().startsWith(prefixedCode.toString());
       }
     )
   );
+  console.log(randomId);
   return randomId;
 }
