@@ -1154,8 +1154,13 @@ export default [{
   "espacio": "Industria Cultural"
 }, 
 {
-  "_id": "Fsa2311019613",
-  "plan_id": "Fsa2311519",
-  "espacio": "Industria Cultural"
+  "_id": "Fsa2311019614",
+  "plan_id": "Fsa2311501",
+  "espacio": ""
+},
+{
+  "_id": "Fsa2311019615",
+  "plan_id": "Fsa2311501",
+  "espacio": ""
 }
 ]

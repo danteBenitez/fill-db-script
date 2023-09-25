@@ -3,7 +3,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8b9",
     },
-    id: 10101,
+    id: "Fsa2310101",
     carrera: "Inicial",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -13,7 +13,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8b9",
     },
-    id: 10201,
+    id: "Fsa2310201",
     carrera: "Ciclo Único Primario",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -23,7 +23,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8b8",
     },
-    id: 11001,
+    id: "Fsa2311001",
     carrera: "Ciclo Básico Secundario",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -33,7 +33,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8b9",
     },
-    id: 11002,
+    id: "Fsa2311002",
     carrera: "Ciclo Básico Secundario Rural",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -43,7 +43,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8ba",
     },
-    id: 11003,
+    id: "Fsa2311003",
     carrera: "Ciclo Básico Básico Técnico",
     fplan: {
       $date: "2008-03-01T00:00:00.000Z",
@@ -53,7 +53,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8bb",
     },
-    id: 11004,
+    id: "Fsa2311004",
     carrera: "Ciclo Básico Artístico",
     fplan: {
       $date: "2008-03-01T00:00:00.000Z",
@@ -63,7 +63,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8bc",
     },
-    id: 11005,
+    id: "Fsa2311005",
     carrera: "Ciclo Básico Artístico Pirané",
     fplan: {
       $date: "2008-03-01T00:00:00.000Z",
@@ -73,7 +73,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8bd",
     },
-    id: 11011,
+    id: "Fsa2311011",
     carrera: "Humanidades y Ciencias Sociales - Opción 1",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -83,7 +83,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8be",
     },
-    id: 11012,
+    id: "Fsa2311012",
     carrera: "Humanidades y Ciencias Sociales - Opción 2",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -93,7 +93,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8bf",
     },
-    id: 11013,
+    id: "Fsa2311013",
     carrera: "Ciencias Naturales - Opción 1",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -103,7 +103,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c0",
     },
-    id: 11014,
+    id: "Fsa2311014",
     carrera: "Ciencias Naturales - Opción 2",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -113,7 +113,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c1",
     },
-    id: 11015,
+    id: "Fsa2311015",
     carrera: "Producción de Bienes y Servicios - Opción 1",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -123,7 +123,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c2",
     },
-    id: 11016,
+    id: "Fsa2311016",
     carrera: "Producción de Bienes y Servicios - Opción 2",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -133,7 +133,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c3",
     },
-    id: 11017,
+    id: "Fsa2311017",
     carrera: "Economía y Gestión de las Organizaciones - Opción 1",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -143,7 +143,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c4",
     },
-    id: 11018,
+    id: "Fsa2311018",
     carrera: "Economía y Gestión de las Organizaciones - Opción 2",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -153,7 +153,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c5",
     },
-    id: 11019,
+    id: "Fsa2311019",
     carrera: "Comunicación, Arte y Diseño",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -163,7 +163,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c6",
     },
-    id: 11020,
+    id: "Fsa2311020",
     carrera: "Ciclo Secundario Orientado en Agro y Ambiente",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -173,7 +173,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c7",
     },
-    id: 11021,
+    id: "Fsa2311021",
     carrera: "Comercial Nocturno",
     fplan: {
       $date: "2003-03-01T00:00:00.000Z",
@@ -183,7 +183,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c8",
     },
-    id: 11022,
+    id: "Fsa2311022",
     carrera:
       "Ciclo Orientado EPES 52 Polivalente de Arte y EPES 89 Polivalente de Arte Pirané",
     fplan: {
@@ -194,7 +194,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8c9",
     },
-    id: 11023,
+    id: "Fsa2311023",
     carrera: "Técnico Mecánico",
     fplan: {
       $date: "2015-03-01T00:00:00.000Z",
@@ -204,7 +204,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8ca",
     },
-    id: 11024,
+    id: "Fsa2311024",
     carrera: "Maestro Mator de Obras",
     fplan: {
       $date: "2015-03-01T00:00:00.000Z",
@@ -214,7 +214,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8cb",
     },
-    id: 11025,
+    id: "Fsa2311025",
     carrera: "Técnico en Salud y Ambiente",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -225,7 +225,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8cc",
     },
-    id: 11026,
+    id: "Fsa2311026",
     carrera: "Técnico en Tecnología de los Alimentos",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -236,7 +236,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8cd",
     },
-    id: 11027,
+    id: "Fsa2311027",
     carrera: "Técnico en Mecanización Agopecuaria",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -247,7 +247,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8ce",
     },
-    id: 11028,
+    id: "Fsa2311028",
     carrera: "Técnico Químico",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -258,7 +258,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8cf",
     },
-    id: 11029,
+    id: "Fsa2311029",
     carrera: "Técnico en Automotores",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -269,7 +269,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d0",
     },
-    id: 11030,
+    id: "Fsa2311030",
     carrera: "Técnico en Electrónica",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -280,7 +280,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d1",
     },
-    id: 11031,
+    id: "Fsa2311031",
     carrera: "Técnico en Producción Agropecuaria",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -291,7 +291,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d2",
     },
-    id: 11032,
+    id: "Fsa2311032",
     carrera: "Técnico en Informática Profesional y Personal",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -302,7 +302,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d6",
     },
-    id: 11501,
+    id: "Fsa2311501",
     carrera: "Técnico Superior en Desarrollo de Software Multiplataforma",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -312,7 +312,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d5",
     },
-    id: 11502,
+    id: "Fsa2311502",
     carrera: "Técnico Superior en Telecomunicaciones",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -322,7 +322,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d6",
     },
-    id: 11503,
+    id: "Fsa2311503",
     carrera: "Técnico Superior en Química Industrial",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",
@@ -332,7 +332,7 @@ export default [
     _id: {
       $oid: "650853e5b55755d4767cb8d9",
     },
-    id: 11504,
+    id: "Fsa2311504",
     carrera: "Técnico Superior en Mecatrónica",
     fplan: {
       $date: "2012-03-01T00:00:00.000Z",

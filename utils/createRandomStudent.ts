@@ -28,22 +28,33 @@ const LEVEL_TO_INSTITUTIONS = {
 export function createRandomStudent() {
   try {
     const studyLevel = randomLevel();
-    const { localidad, ...rest } = createRandomDirection();
-    const institutions = LEVEL_TO_INSTITUTIONS[
-      studyLevel.toUpperCase() as keyof typeof LEVEL_TO_INSTITUTIONS
-    ].filter((i) => i.localidad == localidad.toUpperCase());
-
     const { dni, fecha_de_nacimiento, edad, grado, orientacion } =
       getUniqueDNIAndDateFromLevel(studyLevel);
+    const nextYearInfo = addAYearToLevel(grado, studyLevel);
+    const { localidad, ...rest } = createRandomDirection();
+    const currentInstitutions = LEVEL_TO_INSTITUTIONS[
+      studyLevel.toUpperCase() as keyof typeof LEVEL_TO_INSTITUTIONS
+    ].filter((i) => i.localidad == localidad.toUpperCase());
+    const nextInstitutions = LEVEL_TO_INSTITUTIONS[
+      nextYearInfo.nivel_estudio.toUpperCase() as keyof typeof LEVEL_TO_INSTITUTIONS
+    ].filter((i) => i.localidad == localidad.toUpperCase());
 
-    const institution = institutions.find(
+    const institution = currentInstitutions.find(
       (i) => i.localidad == localidad.toUpperCase()
+    );
+    const nextInstitution = nextInstitutions.find(
+      i => i.localidad == localidad.toUpperCase()
     );
     if (!institution) throw institution;
     const career = getRandomCareer(institution.nombre, studyLevel);
     const { names, gender } = getRandomNames();
     const surnames = getRandomSurnames();
-
+    
+    const currentPlanId = generatePlanId(studyLevel);
+    const nextPlanId = generatePlanId(nextYearInfo.nivel_estudio);
+    if (!nextPlanId) {
+      throw new Error('ID de plan inválido: ' + nextPlanId + " " + nextYearInfo.nivel_estudio)
+    }
     const result = {
       _id: dni,
       nombres: names,
@@ -52,20 +63,25 @@ export function createRandomStudent() {
       genero: gender,
       nacionalidad: getRandomNationality(),
       fecha_de_nacimiento,
-      plan_id: generatePlanId(studyLevel),
-      carrera: career,
       cursado: {
         2021: {
           año: grado,
           nivel_estudio_id: LEVEL_TO_CODE[studyLevel.toUpperCase() as keyof typeof LEVEL_TO_CODE],
           nivel_estudio: studyLevel,
+          plan_id: currentPlanId,
+          carrera: career,
+          edad,
+          cue_anexo: institution?.CUEanexo
         },
         2022: {
-          ...addAYearToLevel(grado, studyLevel)
+          ...nextYearInfo,
+          plan_id: nextPlanId,
+          carrera: career,
+          edad: pick(edad, edad+1),
+          cue_anexo: nextInstitution?.CUEanexo
         }
       },
       cue_anexo: institution?.CUEanexo,
-      edad,
       fecha_ingreso: getRandomEntryDate(2022),
       tutor: [
         ...getRandomNames()["names"],
