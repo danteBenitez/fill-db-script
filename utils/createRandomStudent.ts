@@ -55,12 +55,12 @@ export function createRandomStudent() {
       plan_id: generatePlanId(studyLevel),
       carrera: career,
       cursado: {
-        2022: {
+        2021: {
           año: grado,
           nivel_estudio_id: LEVEL_TO_CODE[studyLevel.toUpperCase() as keyof typeof LEVEL_TO_CODE],
           nivel_estudio: studyLevel,
         },
-        2023: {
+        2022: {
           ...addAYearToLevel(grado, studyLevel)
         }
       },

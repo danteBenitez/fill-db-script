@@ -2,6 +2,7 @@ import { createRandomStudent } from "../utils/createRandomStudent";
 import inRange from "../utils/inRange";
 import SUBJECTS from '../data/subjects-with-id';
 import PLANS from '../data/plan';
+import { Level } from "../utils/dni";
 
 type Student = ReturnType<typeof createRandomStudent>;
 type Subject = (typeof SUBJECTS)[number];
@@ -31,7 +32,9 @@ export async function generateRandomGrades(
       for (const subject of subjects) {
         for (let trimester = 1; trimester <= 3; trimester++) {
           const _id = generateUniqueId(year, student, subject, trimester);
-          const gradeForStudent = createGradeForStudent(student);
+          const gradeForStudent = createGradeForStudent(
+            student, year as 2022 | 2021
+          );
           const avg =
             gradeForStudent.reduce((acc, g) => acc + g) /
             gradeForStudent.length;
@@ -42,6 +45,7 @@ export async function generateRandomGrades(
             condicion: avg >= 6 ? "Aprobado" : "Desaprobado",
           });
           console.log(`Nota ${i} generada`);
+          i++;
         }
       }
     }
@@ -59,19 +63,21 @@ function generateUniqueId(
   return `${year}${trimester}${student._id}${subject._id}`;
 }
 
-function createGradeForStudent(student: Student) {
+function createGradeForStudent(student: Student, year: 2021 | 2022) {
   // Decide if it is a trimester or quadrimester
   const quantity = inRange(3, 6);
 
   // Decide what's the minimum
-  const levelToMinGrade = {
+  const levelToMinGrade: Record<Level, number> = {
     inicial: 10,
     primario: 7,
     secundario: 1,
     superior: 1,
   };
 
-  const min = levelToMinGrade[student.nivel_estudio];
+  const min = levelToMinGrade[
+    student.cursado[year as keyof typeof student.cursado].nivel_estudio
+  ];
 
   return Array.from({
     length: quantity,
