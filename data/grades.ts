@@ -23,7 +23,7 @@ export async function generateRandomGrades(
       2: TrimesterGrade,
       3: TrimesterGrade
     },
-    nota_final: number
+    nota_anual: number
   }[] = [];
   let i = 0;
   for (const year of [2021, 2022]) {
@@ -50,7 +50,7 @@ export async function generateRandomGrades(
               2: generateGradesForTrimester(student, year),
               3: thirdTrimester
             },
-            nota_final: thirdTrimester.nota_final,
+            nota_anual: thirdTrimester.nota_final,
             condicion: thirdTrimester.nota_final >= 6 ? "Aprobado" : "Desaprobado"
           });
           console.log(`Nota ${i} generada`);

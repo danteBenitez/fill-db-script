@@ -52,6 +52,7 @@ export function createRandomStudent() {
     
     const currentPlanId = generatePlanId(studyLevel, career);
     const nextPlanId = generatePlanId(nextYearInfo.nivel_estudio, career);
+    const gradeOrYear = studyLevel == "primario" ? "grado" : "año";
 
     const result = {
       _id: dni,
@@ -63,7 +64,7 @@ export function createRandomStudent() {
       fecha_de_nacimiento,
       cursado: {
         2021: {
-          año: grado,
+          [gradeOrYear]: grado,
           nivel_estudio_id: LEVEL_TO_CODE[studyLevel.toUpperCase() as keyof typeof LEVEL_TO_CODE],
           nivel_estudio: studyLevel,
           plan_id: currentPlanId,
@@ -111,7 +112,8 @@ function getRandomCareer(institution: string | undefined, studyLevel: Level) {
 }
 
 type ReturnAddYear = {
-  grado: number,
+  grado?: number,
+  año?: number,
   nivel_estudio: Level,
   nivel_estudio_id: typeof LEVEL_TO_CODE[keyof typeof LEVEL_TO_CODE],
 }
@@ -140,7 +142,7 @@ function addAYearToLevel(grade: number, level: Level): ReturnAddYear {
       }
     case "secundario": 
       return grade >= 6 ? {
-        grado: 1,
+        año: 1,
         nivel_estudio: "superior",
         nivel_estudio_id: 115
       } : {
@@ -150,7 +152,7 @@ function addAYearToLevel(grade: number, level: Level): ReturnAddYear {
       }
     case "superior": 
       return {
-        grado: grade + 1,
+        año: grade + 1,
         nivel_estudio: "superior",
         nivel_estudio_id: 115
       }
