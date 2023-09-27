@@ -50,8 +50,8 @@ export function createRandomStudent() {
     const { names, gender } = getRandomNames();
     const surnames = getRandomSurnames();
     
-    const currentPlanId = generatePlanId(studyLevel);
-    const nextPlanId = generatePlanId(nextYearInfo.nivel_estudio);
+    const currentPlanId = generatePlanId(studyLevel, career);
+    const nextPlanId = generatePlanId(nextYearInfo.nivel_estudio, career);
 
     const result = {
       _id: dni,
@@ -67,25 +67,25 @@ export function createRandomStudent() {
           nivel_estudio_id: LEVEL_TO_CODE[studyLevel.toUpperCase() as keyof typeof LEVEL_TO_CODE],
           nivel_estudio: studyLevel,
           plan_id: currentPlanId,
-          carrera: career,
+          carrera: getRandomCareer(institution.nombre, studyLevel),
           edad,
           cue_anexo: institution?.CUEanexo
         },
         2022: {
           ...nextYearInfo,
           plan_id: nextPlanId,
-          carrera: career,
+          carrera: getRandomCareer(nextInstitution?.nombre, studyLevel),
           edad: pick(edad, edad+1),
           cue_anexo: nextInstitution?.CUEanexo
         }
       },
-      cue_anexo: institution?.CUEanexo,
       fecha_ingreso: getRandomEntryDate(2022),
       tutor: [
         ...getRandomNames()["names"],
         ...pick(surnames, getRandomSurnames()),
       ].join(" "),
     };
+
     return result;
   } catch (e) {
     if (e instanceof Error) throw e;
@@ -93,7 +93,10 @@ export function createRandomStudent() {
   }
 }
 
-function getRandomCareer(institution: string, studyLevel: Level) {
+function getRandomCareer(institution: string | undefined, studyLevel: Level) {
+  if (!institution) {
+    return null;
+  }
   const ints = institutions.find((i) => i.nombre == institution.toUpperCase());
 
   if (ints?.ec_SNU == 1) {

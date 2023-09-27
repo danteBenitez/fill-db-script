@@ -1,0 +1,39 @@
+  {
+    "_id": "46152825",
+    "nombres": ["Dante", "Flavian"],
+    "apellidos": ["Benitez"],
+    "domicilio": {
+      "localidad": "Formosa",
+      "barrio": "Santa Rosa",
+      "calle": "Av. Arturo Frondizi",
+      "nro": 1745,
+      "latitud": -26.196940366328263, 
+      "longitud": -58.18129152150008
+    },
+    "genero": "M",
+    "nacionalidad": "Argentina",
+    "fecha_de_nacimiento": "2005-04-07T05:39:10.029Z",
+    "cursado": {
+      "2021": {
+        "año": 5,
+        "nivel_estudio_id": 110,
+        "nivel_estudio": "secundario",
+        "plan_id": "Fsa2311013",
+        "carrera": null,
+        "edad": 16,
+        "cue_anexo": 340115900
+      },
+      "2022": {
+        "año": 6,
+        "nivel_estudio": "secundario",
+        "nivel_estudio_id": 110,
+        "plan_id": "Fsa2311013",
+        "carrera": null,
+        "edad": 17,
+        "cue_anexo": 340115900
+      }
+    },
+    "fecha_ingreso": "2022-07-07T03:00:00.000Z",
+    "tutor": "Laura Muñoz",
+    "yo": "S"
+  }
